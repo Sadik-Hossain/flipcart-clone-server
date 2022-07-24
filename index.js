@@ -7,17 +7,22 @@ require("dotenv").config();
 const Connection = require("./database/db");
 const DefaultData = require("./default");
 
+//* middleware + routes
 app.use(cors());
 app.use(express.json());
 app.use("/", router);
 
+//* root get endpoint
 app.get("/", (req, res) => {
   res.send(`hello`);
 });
+
 const PORT = 5001;
-const db = process.env.db;
+
 //* db connect
+const db = process.env.db;
 Connection(db);
+
 //* server running
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
