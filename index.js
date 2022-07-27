@@ -21,7 +21,8 @@ const PORT = process.env.PORT || 5001;
 
 //* db connect
 // const db = process.env.db;
-const uri = `mongodb+srv://${process.env.db_user}:${process.env.db_pass}@cluster0.c0hm6.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://sadiq:ETo2WGAY0OXozOAL@cluster0.c0hm6.mongodb.net/flipcartDb`;
+
 Connection(uri);
 
 //* server running

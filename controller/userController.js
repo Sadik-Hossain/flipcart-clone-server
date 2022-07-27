@@ -9,7 +9,7 @@ const userSignup = async (req, res) => {
       return res.status(401).json({ message: "username already exists" });
     }
     const user = req.body;
-
+    //* new user creation
     const newUser = new User(user);
     await newUser.save();
     res.status(200).json({ message: user });
