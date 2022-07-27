@@ -17,11 +17,12 @@ app.get("/", (req, res) => {
   res.send(`hello`);
 });
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 //* db connect
-const db = process.env.db;
-Connection(db);
+// const db = process.env.db;
+const uri = `mongodb+srv://${process.env.db_user}:${process.env.db_pass}@cluster0.c0hm6.mongodb.net/?retryWrites=true&w=majority`;
+Connection(uri);
 
 //* server running
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
