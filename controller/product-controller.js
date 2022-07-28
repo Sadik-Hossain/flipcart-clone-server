@@ -10,4 +10,15 @@ const getProducts = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-module.exports = getProducts;
+
+const getProductById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const pd = await Product.findOne({ id: id });
+    res.status(200).json(pd);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { getProducts, getProductById };
